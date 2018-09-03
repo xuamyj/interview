@@ -1,0 +1,4 @@
+- don’t change ints into strings :)
+- converting from 1-index to 0-index often helps
+- caching: the smaller problem should have the same structure as the larger problem
+- be careful of passing via reference vs value

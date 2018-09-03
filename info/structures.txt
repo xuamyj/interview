@@ -1,0 +1,47 @@
+GENERAL
+
+- don’t change ints into strings
+- linked list, stacks, and queues are methods of iteration. they’re less about storing data, they’re more about when you do some insertions and some removals
+
+
+NEW COMIBINATIONS
+
+- how can two data structures be combined (ie. store the same data twice?)
+- can we store tuples or lists inside a data structure?
+
+
+STACK QUEUE LINKEDLIST
+
+- want something to happen in order -> queue
+- implementing recursive things without being recursive --> stack
+- depict circular things (train stops, undo functionality) --> sometimes linked list
+- keep track of whether you’ve seen something or not --> hashset
+- look up key-value pair --> hashmap
+
+
+VARIATIONS ON SORTING (OR NOT SORTING)
+
+- keep track of max/min --> heap
+- care about finding sorted neighbors or sorted subsection --> keep sorted array
+- care about adding (it’s hard to add to sorted array) --> keep bst
+- anything recursive (left and right subtrees are also bsts) --> keep bst
+- swap around subtrees more efficiently (pointer based as opposed to memory based) (chunks as opposed to copying over O(n) things) --> keep bst
+- keep track of data and when you added it in --> keep unsorted array and hope for the best
+- only care about index, not actual value “what’s the 20th thing” --> keep unsorted array
+
+
+GRAPHS
+
+- finds shortest path by hops --> bfs
+- finds shortest path by distance --> dijkstra’s / a*
+- minimum spanning tree != dijkstra's from every node to every node (np-hard problem)
+- small dense graphs --> matrix
+- large sparse graphs --> adjacency list
+- want to pass edges around --> objects and pointers
+- edges store additional data --> objects and pointers
+
+USEFUL LINKS
+
+http://careerdrill.com/blog/coding-interview/choosing-the-right-data-structure-to-solve-problems/
+http://dtkachenko.blogspot.com/2011/11/data-structures-and-algorithms-when-to.html
+
