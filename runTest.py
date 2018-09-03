@@ -39,7 +39,9 @@ FOLDERS = {
     ]),
     'tree_traversals': (TreeTraversalsTester, [
         'bfs',
-        'dfs',
+        'inorder',
+        'preorder',
+        'postorder',
     ]),
     'tree_types': (TreeTypesTester, [
         'bst',
