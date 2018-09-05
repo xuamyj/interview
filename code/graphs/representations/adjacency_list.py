@@ -29,5 +29,5 @@ class AdjListGraph(object):
         return endNodeVal in self.adjList[startNodeVal]
 
     # easier than matrix, O(1)
-    def getNeighbors(self, val):
+    def getNeighborVals(self, val):
         return set(self.adjList[val])

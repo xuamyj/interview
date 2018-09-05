@@ -11,15 +11,15 @@ class MatrixGraph(object):
         self.name = 'matrix'
 
     def addNode(self, val):
-        print self.numNodes, self.initSize
         if self.numNodes == self.initSize:
             # resize
             newMatrix = [[0]*(self.initSize*2) for _ in range(self.initSize*2)]
+            print len(newMatrix), len(newMatrix[0])
             for i in range(self.initSize):
                 for j in range(self.initSize):
                     newMatrix[i][j] = self.matrix[i][j]
-                    self.matrix = newMatrix
-                    self.initSize *= 2
+            self.matrix = newMatrix
+            self.initSize *= 2
 
         # add node
         self.valToIndex[val] = self.numNodes
@@ -48,7 +48,7 @@ class MatrixGraph(object):
         return self.matrix[self.valToIndex[startNodeVal]][self.valToIndex[endNodeVal]] != 0
 
     # harder than adjacency list, O(numNodes)
-    def getNeighbors(self, val):
+    def getNeighborVals(self, val):
         neighbors = set()
         for j in range(self.numNodes):
             if self.matrix[self.valToIndex[val]][j] != 0:

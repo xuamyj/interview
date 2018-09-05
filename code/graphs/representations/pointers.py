@@ -1,9 +1,16 @@
 class GraphNode(object):
-    def __init__(self, val, visited=False, color=None):
+    def __init__(self, val):
         self.val = val
-        self.visited = visited
-        self.color = color
         self.outEdges = set()
+
+        # for bfs
+        self.visited = False
+
+        # for dijkstra's
+        self.color = None
+        self.weight = None
+        self.prevNode = None
+
 
     def addOutEdge(self, edge):
         self.outEdges.add(edge)
@@ -30,8 +37,8 @@ class Graph(object):
 
         self.name = 'pointers'
 
-    def addNode(self, val, visited=False, color=None):
-        node = GraphNode(val, visited, color)
+    def addNode(self, val):
+        node = GraphNode(val)
         self.nodeMap[val] = node
 
     def addEdge(self, startNodeVal, endNodeVal, weight=1):
@@ -53,7 +60,7 @@ class Graph(object):
     def isEdge(self, startNodeVal, endNodeVal):
         return (startNodeVal, endNodeVal) in self.edgeMap
 
-    def getNeighbors(self, val):
+    def getNeighborVals(self, val):
         return set([edge.endNode.val for edge in self.nodeMap[val].outEdges])
 
     # Helper functions for code.graphs.algorithms
@@ -64,3 +71,6 @@ class Graph(object):
 
     def getAllEdges(self):
         return self.edgeMap.values()
+
+    def getNeighbors(self):
+        return [self.nodeMap[edge.endNodeVal] for edge in node.outEdges]

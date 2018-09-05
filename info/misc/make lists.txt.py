@@ -23,3 +23,14 @@ a['c'] += 1
 #   File "<stdin>", line 1, in <module>
 # KeyError: 'c'
 
+# queue
+from collections import deque
+q = deque()
+q.append('a')
+q.popleft()
+
+# heap pqueue
+h = []
+heappush(h, (1, 'x'))
+heappop(h)
+
