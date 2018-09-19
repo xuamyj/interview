@@ -1,3 +1,5 @@
+from code.graphs.representations.pointers import Graph
+
 class Kruskal(object):
     def __init__(self):
         self.name = 'kruskals'
@@ -13,13 +15,15 @@ class Kruskal(object):
         numClusters = len(self.clusterMap)
 
         mst = set()
-        edges = graph.getAllEdges().sort(key=lambda edge: edge.weight)
+        edges = sorted(graph.getAllEdges(), key=lambda edge: edge.weight)
         for edge in edges:
             startNode = edge.startNode
             endNode = edge.endNode
 
             if self.clusterMap[startNode] != self.clusterMap[endNode]:
-                clusterMap[startNode] = self.clusterMap[endNode] = clusterMap[startNode].union(self.clusterMap[endNode])
+                result = self.clusterMap[startNode].union(self.clusterMap[endNode])
+                for node in result:
+                    self.clusterMap[node] = result
                 mst.add((edge.startNode.val, edge.endNode.val))
                 numClusters -= 1
 
