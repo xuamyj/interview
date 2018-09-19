@@ -14,7 +14,6 @@ class MatrixGraph(object):
         if self.numNodes == self.initSize:
             # resize
             newMatrix = [[0]*(self.initSize*2) for _ in range(self.initSize*2)]
-            print len(newMatrix), len(newMatrix[0])
             for i in range(self.initSize):
                 for j in range(self.initSize):
                     newMatrix[i][j] = self.matrix[i][j]
